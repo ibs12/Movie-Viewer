@@ -27,3 +27,9 @@ Flix is an app that allows users to browse movies from the [The Movie Database A
 
 ### Notes
 Describe any challenges encountered while building the app.
+
+I was having trouble with the Images showing up on with the URL I got from the API documentation. But when I used I URL posted on slack it worked
+
+I was getting errors that I had no idea what it wanted because I would forget to name the class 
+
+My biggest challenge was getting Github desktop to work. For some reason when I would drop my project folder into my project repository github desktop would say the folder was empty. I had to play around with and remove the top folder of my project folder. Which ruined my entire project and didn't work anymore. I had to redo the entire project because of that and was more carful moving the files around.

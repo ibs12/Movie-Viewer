@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-IOS Flix-IOS FlixUITests/Pods-IOS Flix-IOS FlixUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework

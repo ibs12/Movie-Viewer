@@ -23,7 +23,8 @@ class MovieDetailsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        titleLabel.lineBreakMode = .byWordWrapping
+
         
         titleLabel.text = movie["title"] as? String
         titleLabel.sizeToFit()

@@ -39,24 +39,22 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
             let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
             let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
             let task = session.dataTask(with: request) { (data, response, error) in
-                if let error = error {
-                     self.tableView.reloadData()
-                } else if let data = data {
-                    do {
-                        if let dataDictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                            self.movies = dataDictionary["results"] as? [[String:Any]] ?? []
-                            for movie in self.movies {
-                                self.saveMovieToLocalDatabase(movie: movie)
-                            }
-                            self.hasFetchedMovies = true  // Set the flag here
-                            self.tableView.reloadData()
-                        }
-                    } catch {
-                        print("Error during JSON serialization: \(error.localizedDescription)")
-                    }
+            if let error = error {
+                print(error.localizedDescription)
+                self.movies = self.fetchMoviesFromLocalDatabase()
+                self.tableView.reloadData()
+            } else if let data = data {
+                let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+                self.movies = dataDictionary["results"] as! [[String:Any]]
+                for movie in self.movies {
+                    self.saveMovieToLocalDatabase(movie: movie)
                 }
+                self.hasFetchedMovies = true  // Set the flag here
+                self.tableView.reloadData()
             }
-            task.resume()
+        }
+        task.resume()
+
             
         }
     
@@ -143,38 +141,26 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            print("Loading up the details screen")
-            
-            // Find the selected movie
-            let cell = sender as! UITableViewCell
-            let indexPath = tableView.indexPath(for: cell)!
-            var movie = movies[indexPath.row]
-            
-            // If we're offline, fetch the movie details from the local database instead
-            if !hasFetchedMovies {
-                let id = movie["id"] as? Int64 ?? 0
-                let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "MovieEntity")
-                fetchRequest.predicate = NSPredicate(format: "id == %@", id)
-                
-                do {
-                    let fetchedMovies = try managedObjectContext.fetch(fetchRequest)
-                    if let fetchedMovie = fetchedMovies.first {
-                        movie["overview"] = fetchedMovie.value(forKey: "overview")
-                        movie["poster_path"] = fetchedMovie.value(forKey: "poster_path")
-                        // add any other details you're storing in the database
-                    }
-                } catch let error as NSError {
-                    print("Could not fetch. \(error), \(error.userInfo)")
-                }
-            }
-            
-            // Pass the selected movie to the details view controller
-            let detailsViewController = segue.destination as! MovieDetailsViewController
-            detailsViewController.movie = movie
-            
-            tableView.deselectRow(at: indexPath, animated: true)
-        }
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        // Get the new view  controller using segue.destination
+        // Pass the selected object to the new view controller.
+        
+        print("Loading up the details screen")
+        
+        //find the selected movie
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: cell)!
+        let movie = movies[indexPath.row]
+        
+        
+        
+        //Pass the selected movie to the details view controller
+        let detailsViewController = segue.destination as! MovieDetailsViewController
+        
+        detailsViewController.movie = movie
+        
+        tableView.deselectRow(at: indexPath, animated: true)
         
     }
+    
+}

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0F9FD686985547533D35BC5D /* Pods_IOS_Flix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32D1ED3135A979C8B313082 /* Pods_IOS_Flix.framework */; };
 		834471FCBC37E22898925189 /* Pods_IOS_FlixTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E26544E7B536AF948F8C6211 /* Pods_IOS_FlixTests.framework */; };
+		CB0FE9502A5A16EE0059FA8E /* MovieModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB0FE94E2A5A16EE0059FA8E /* MovieModel.xcdatamodeld */; };
 		CB4620BC28D915AF00BF2410 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4620BB28D915AF00BF2410 /* MovieDetailsViewController.swift */; };
 		CB76106528D05CD200305E26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB76106428D05CD200305E26 /* AppDelegate.swift */; };
 		CB76106728D05CD200305E26 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB76106628D05CD200305E26 /* SceneDelegate.swift */; };
@@ -48,6 +49,7 @@
 		60D3C51ACE82E57593D1AC3A /* Pods-IOS Flix-IOS FlixUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS Flix-IOS FlixUITests.release.xcconfig"; path = "Target Support Files/Pods-IOS Flix-IOS FlixUITests/Pods-IOS Flix-IOS FlixUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AEF8CEB1A28A7BB56F2B3A44 /* Pods-IOS FlixTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS FlixTests.release.xcconfig"; path = "Target Support Files/Pods-IOS FlixTests/Pods-IOS FlixTests.release.xcconfig"; sourceTree = "<group>"; };
 		BD4B3531212F18ACDF1F36D7 /* Pods-IOS Flix-IOS FlixUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS Flix-IOS FlixUITests.debug.xcconfig"; path = "Target Support Files/Pods-IOS Flix-IOS FlixUITests/Pods-IOS Flix-IOS FlixUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CB0FE94F2A5A16EE0059FA8E /* MovieModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MovieModel.xcdatamodel; sourceTree = "<group>"; };
 		CB4620BB28D915AF00BF2410 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		CB76106128D05CD200305E26 /* IOS Flix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS Flix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB76106428D05CD200305E26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			children = (
 				CB76106428D05CD200305E26 /* AppDelegate.swift */,
 				CB76106628D05CD200305E26 /* SceneDelegate.swift */,
+				CB0FE94E2A5A16EE0059FA8E /* MovieModel.xcdatamodeld */,
 				CB76106A28D05CD200305E26 /* Main.storyboard */,
 				CBDA273228D97EB1003073A9 /* MovieGridCell.swift */,
 				CBDA273028D9785C003073A9 /* MovieGridViewController.swift */,
@@ -418,6 +421,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB0FE9502A5A16EE0059FA8E /* MovieModel.xcdatamodeld in Sources */,
 				CB4620BC28D915AF00BF2410 /* MovieDetailsViewController.swift in Sources */,
 				CB76106528D05CD200305E26 /* AppDelegate.swift in Sources */,
 				CB76106728D05CD200305E26 /* SceneDelegate.swift in Sources */,
@@ -772,6 +776,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CB0FE94E2A5A16EE0059FA8E /* MovieModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CB0FE94F2A5A16EE0059FA8E /* MovieModel.xcdatamodel */,
+			);
+			currentVersion = CB0FE94F2A5A16EE0059FA8E /* MovieModel.xcdatamodel */;
+			path = MovieModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CB76105928D05CD200305E26 /* Project object */;
 }

@@ -23,7 +23,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="165" id="KiP-yQ-aVC" userLabel="MovieCell" customClass="MovieCell" customModule="IOS_Flix" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="165" id="KiP-yQ-aVC" userLabel="MovieCell" customClass="MovieCell" customModule="IOS_Flix" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="414" height="165"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KiP-yQ-aVC" id="PNp-7H-nWM">
@@ -49,7 +49,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLt-GV-uUY">
-                                                    <rect key="frame" x="118" y="19" width="250" height="29"/>
+                                                    <rect key="frame" x="118" y="16" width="250" height="35"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -58,12 +58,13 @@
                                             <constraints>
                                                 <constraint firstItem="AYs-PT-5TR" firstAttribute="leading" secondItem="PNp-7H-nWM" secondAttribute="leading" constant="10" id="3b6-bv-31o"/>
                                                 <constraint firstAttribute="bottom" secondItem="jop-hu-8gJ" secondAttribute="bottom" constant="2" id="6qL-i4-l7F"/>
-                                                <constraint firstItem="jop-hu-8gJ" firstAttribute="top" secondItem="hLt-GV-uUY" secondAttribute="bottom" constant="3" id="OSH-sz-ZU6"/>
                                                 <constraint firstItem="AYs-PT-5TR" firstAttribute="leading" secondItem="PNp-7H-nWM" secondAttribute="leading" constant="10" id="RxW-Bm-pS1"/>
                                                 <constraint firstItem="AYs-PT-5TR" firstAttribute="top" secondItem="PNp-7H-nWM" secondAttribute="top" constant="11" id="UVT-bF-MRm"/>
                                                 <constraint firstItem="hLt-GV-uUY" firstAttribute="leading" secondItem="jop-hu-8gJ" secondAttribute="leading" id="Yar-Su-ao1"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="hLt-GV-uUY" secondAttribute="trailing" constant="26" id="gXM-JY-6qU"/>
+                                                <constraint firstItem="hLt-GV-uUY" firstAttribute="top" secondItem="PNp-7H-nWM" secondAttribute="topMargin" constant="5" id="h8Y-TQ-fiQ"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="jop-hu-8gJ" secondAttribute="trailing" id="mYs-bs-qEZ"/>
+                                                <constraint firstItem="jop-hu-8gJ" firstAttribute="top" secondItem="hLt-GV-uUY" secondAttribute="bottom" id="pWq-H4-gzd"/>
                                                 <constraint firstItem="jop-hu-8gJ" firstAttribute="top" secondItem="PNp-7H-nWM" secondAttribute="topMargin" constant="40" id="urZ-Lw-jTj"/>
                                                 <constraint firstItem="AYs-PT-5TR" firstAttribute="top" secondItem="PNp-7H-nWM" secondAttribute="top" constant="11" id="w1V-FK-NGR"/>
                                                 <constraint firstItem="jop-hu-8gJ" firstAttribute="leading" secondItem="AYs-PT-5TR" secondAttribute="trailing" constant="8" symbolic="YES" id="wdr-z2-9rm"/>
@@ -74,7 +75,7 @@
                                             <outlet property="posterView" destination="AYs-PT-5TR" id="A4R-k0-mLN"/>
                                             <outlet property="synopsisLabel" destination="jop-hu-8gJ" id="jVd-Np-VvD"/>
                                             <outlet property="titleLabel" destination="hLt-GV-uUY" id="8Ms-p5-dHI"/>
-                                            <segue destination="71m-ay-zBB" kind="show" id="mx8-ro-eVY"/>
+                                            <segue destination="71m-ay-zBB" kind="show" identifier="NowPlayingToMovieDetails" id="mx8-ro-eVY"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
